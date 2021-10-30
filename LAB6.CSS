@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    height: 100vh;
+
+}
+.navbar-style{
+box-shadow: 0 5px 10px green  ;
+text-transform: capitalize;
+}
+.logo{
+    height: 48px;
+    padding: 2px 10px;
+}
+.icon-bar{
+    background: black;
+}
+li a{
+    color: darkblue;
+
+}
+.big-text{
+    font-size: 52px;
+    margin: 20px 0;
+    color: coral;
+}
+a.btn{
+    margin: 30px  10;
+    width: 150px;
+    padding: 10px;
+    border-radius: 20px;
+
+}
+a.btn-first{
+    background:transparent;
+border-radius: 20px;
+border: 1px solid green;
+}
+a.btn-second{
+background:transparent;
+border-radius: 20px;
+border: 1px solid green;
+}
+a.btn:hover{
+   background:blue;
+   box-shadow:5px 5px 10px red;
+   border-radius: 20px;
+}

@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+    width: 150px;
+    height: 100px;
+}
+
+.foot{
+    display: flex;
+    justify-content: center;
+    background-color: orange;
+}
+.d-block{
+   
+    height: 570px;
+}
+.carousel-caption h5,p{
+    font-size: 40px;
+    color:black;
+    background-color: transparent;
+    
+}

@@ -1,0 +1,17 @@
+body {
+    background-color:lightyellow;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .signup-box{
+      background-color: limegreen;
+    width: 360px;
+    height: 620px;
+    margin: auto;
+    background-color: white;
+    border-radius: 3px;
+  }
+  label{
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+  }
