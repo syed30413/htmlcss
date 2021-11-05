@@ -1,31 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Sign Up | By Code Info</title>
-    <link rel="stylesheet" href="signup.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="signup-box">
-      <h1>Sign Up</h1>
-      <h4>It's free and only takes a minute</h4>
-      <form>
-        <label>First Name</label><br>
-        <input type="text" placeholder="Enter Your First Name" /><br><br>
-        <label>Last Name</label><br>
-        <input type="text" placeholder="Enter Your Last Name" /><br><br>
-        <label>Email</label><br>
-        <input type="email" placeholder="Enter Your Email" /><br><br>
-        <label>Password</label><br>
-        <input type="password" placeholder="Enter Your Password" /><br><br>
-        <label>Confirm Password</label><br>
-        <input type="password" placeholder="Enter Your confirm password" /><br><br>
-        <input type="button" value="Submit" />
-      </form>
-    </div>
+<html>
+    <head>
+        <title>signup</title>
+        <script>
+function validate(){
+    var name=document.stud_form.name;
+    if(name.value.length<=0){
+        alert("Name is required")
+        name.focus()
+        return false;
+    }var mobile=document.stud_form.mobile;
+    if(mobile.value.length<=0){
+        alert("Mobile is required")
+        mobile.focus()
+        return false;
+    }var email=document.stud_form.email;
+    if(email.value.length<=0){
+        alert("email is required")
+        email.focus()
+        return false;
+    }var gender=document.stud_form.gender;
+    if(gender.value.length<=0){
+        alert("gender is required")
+        gender.focus()
+        return false;
+    }var course=document.stud_form.course;
+    if(course.value=="select"){
+        alert("course is required")
+        course.focus()
+        return false;
+    }
+    var check=false;
+    for(var i=program.length-1;i>=0;i--){
+        if(program[i].checked){
+            check=ture;
+        }}
+        if(check==false){
+        alert("program is required")
+        return false;
+    }
+    return false;}
+    function validateString(id){
+        var element=document.getElementById(id);
+        var regExp=/^[a-zA-Z ]+$/;
+        if(!regExp.test(element.value)){
+            alert("enter string value")
+            return false;
+        }
+    }
+    function validateEmail(id){
+        var element=document.getElementById(id);
+        var regExp=/^[a-zA-Z0-9.]+@[a-a-zA-Z0-9.]+\.[a-zA-Z]{2,4}$/;
+        if(!regExp.test(element.value)){
+            alert("enter valide Email")
+            return false;
+        }
+    }
 
-  </body>
+    
+
+        </script>
+        <body>
+            <h1>SignUp form</h1>
+            <hr>
+            <h2>student form</h2>
+            <form method="" action="" name="stud_form" onsubmit="return validate()">
+            <table>
+                <tr>
+                    <td><label>Name</label></td>
+                    <td><input type="text" id="name" maxlength="4"  name="name" onblur="validateString(this.id)"></td>
+                </tr>
+                <tr>
+                    <td><label>Mobile</label></td>
+                    <td><input type="number" id="numb" max="11" name="mobile"></td>
+                </tr>
+                <tr>
+                    <td><label>Email</label></td>
+                    <td><input type="text" id="email" name="email" onblur="validateEmail(this.id)"></td>
+                </tr>
+                <tr>
+                    <td><label>Gender</label></td>
+                    <td><input type="radio" id="" name="gender" value="Male">Male
+                    <input type="radio" id="" name="gender" value="Female">Female</td>
+                </tr>
+                <tr>
+                    <td><label>Course</label></td>
+                    <td><select name="course" >
+                        <option>select</option>
+                        <option>OOP</option>
+                        <option>DCN</option>
+                        <option>Web Engineering</option>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Program</label></td>
+                    <td><input type="checkbox" id="" name="program">BSCS
+                    <input type="checkbox" id="" name="program">BSSE
+                    <input type="checkbox" id="" name="program">BSAI</td>
+                </tr>
+                <tr>
+                    
+                    <td><input type="submit" id="" name="submit" value="submit" onfocus="validateString(this.id)">
+                    <input type="Reset" id="" name="reset" value="reset"></td>
+                </tr>
+            </table>
+        </form>
+        </body>
+    </head>
 </html>
