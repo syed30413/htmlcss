@@ -1,0 +1,128 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <script>
+function validate(){
+    var name=document.stud_form.name;
+    var email=document.stud_form.email;
+    var mobile=document.stud_form.mobile;
+    var gender=document.stud_form.gender;
+    var course=document.stud_form.course;
+    var program=document.stud_form.program;
+    if(name.value.length<=0){
+        alert("Name is required")
+        name.focus()
+        return false;
+    }
+    if(mobile.value.length<=0){
+        alert("Mobile No is required")
+        mobile.focus()
+        return false;
+    }
+    if(email.value.length<=0){
+        alert("Email is required")
+        email.focus()
+        return false;
+    }
+    if(gender.value.length<=0){
+        alert("gender is required")
+        gender.focus()
+        return false;
+    }
+    if(course.value=="Select"){
+        alert("Course is required")
+        course.focus()
+        return false;
+    }
+    var check=false;
+    for(var i=program.length-1;i>=0;i--){
+        if(program[i].checked){
+            check=true;
+        }
+    }
+        if(check==false){
+            alert("Program is required")
+            return false;
+        }
+    
+    
+
+    return false;
+      
+}
+function validateString(id){
+    var element=document.getElementById(id);
+    var regExp=/^[a-zA-Z0-9 ]+$/;
+    if(!regExp.test(element.value)){
+        alert("Enter valid String");
+        return false;
+    }
+}
+function validateEmail(id){
+    var element=document.getElementById(id);
+    var regExp=/^[a-zA-Z0-9._]+@[a-zA-Z0-9._]+\.[a-zA-Z]{2,4}$/;
+    if(!regExp.test(element.value)){
+        alert("Enter valid Email");
+        return false;
+    }
+
+}
+
+    </script>
+</head>
+<body data-new-gr-c-s-loaded="14.1037.0">
+    <h1>Sigup Form</h1>
+    <hr>
+    <h2>Student Form</h2>
+    <form method="" action="" name="stud_form" onsubmit="return validate()">
+    <table>
+        <tbody><tr>
+            <td><label>Name:</label></td>
+            <td><input type="text" name="name" id="name" onblur="validateString(this.id)"></td>
+        </tr>
+        <tr>
+            <td><label>Mobile:</label></td>
+            <td><input type="text" name="mobile"></td>
+        </tr>
+        <tr>
+            <td><label>Email:</label></td>
+            <td><input type="text" name="email" id="email" onblur="validateEmail(this.id)"></td>
+        </tr>
+        <tr>
+            <td><label>Gender:</label></td>
+            <td>
+                <input type="radio" name="gender" value="Male">Male
+                <input type="radio" name="gender" value="Female">Female
+            </td>
+        </tr>
+        <tr>
+            <td><label>Course:</label></td>
+            <td><select name="course">
+                <option>Select</option>
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>JAVAScript</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td><label>Select Program:</label></td>
+            <td>
+                <input type="checkbox" name="program">BSCS
+                <input type="checkbox" name="program">BSSE
+                <input type="checkbox" name="program">BSAI
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="submit" value="submit">
+                <input type="reset" name="reset" value="reset">
+            </td>
+            </tr>
+    </tbody></table>
+</form>
+    
+
+
+</body></html>
